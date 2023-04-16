@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+
+    <!-- Script -->
+    <script type="module" src="./assets/js/main.js" defer></script>
+    <script type="module" src="./assets/js/route.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <a href="" class="header__logo-link">
+            <img
+              class="header__logo-img"
+              src="./assets/imgs/logo.png"
+              alt="Logo image"
+            />
+          </a>
+
+          <div class="search-container" data-search-container>
+            <div class="search-bar">
+              <input
+                type="search"
+                class="search-bar__input"
+                placeholder="Enter city name..."
+                data-search-input
+              />
+
+              <span class="search-bar__search-icon m-icon leading-icon"
+                >search</span
+              >
+
+              <button
+                class="btn-icon leading-icon state-changeable"
+                data-search-toggler
+              >
+                <span class="m-icon">arrow_back</span>
+              </button>
+            </div>
+
+            <div class="search-result" data-search-result></div>
+          </div>
+
+          <div class="header-actions">
+            <button class="btn-icon state-changeable" data-search-toggler>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button
+              class="btn-icon state-changeable btn-saved-locations"
+              style="display: flex !important"
+              data-saved-toggler
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a
+              href="#/current-location"
+              class="btn-primary state-changeable"
+              data-current-location-btn
+            >
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span class="text">Current Location</span>
+            </a>
+          </div>
+
+          <div class="saved-locations d-none">
+            <div class="saved-locations__heading-wrapper">
+              <button
+                class="btn-icon leading-icon state-changeable"
+                style="display: inline-flex; background-color: transparent"
+                data-saved-toggler
+              >
+                <span class="m-icon">arrow_back</span>
+              </button>
+              <span class="saved-locations__heading-text title-2" style="display: inline-block; margin-bottom: 0;">Saved locations</span>
+            </div>
+
+            <ul class="search-result__list saved-locations__list">
+              
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main content -->
+      <main>
+        <article class="container" data-container>
+          <div class="container-left">
+            <!-- Section: current weather -->
+            <section
+              class="section current-weather"
+              data-current-weather
+            ></section>
+
+            <!-- Section: forecast weather -->
+            <section
+              class="section forecase-weather"
+              data-five-day-forecast
+            ></section>
+          </div>
+
+          <div class="container-right">
+            <!-- Section hightlight -->
+            <section class="section hightlights" data-hightlights></section>
+
+            <!-- Hourly forecast -->
+            <section
+              class="section hourly-forecast"
+              data-hourly-forecast
+            ></section>
+          </div>
+
+          <div class="loading" data-loading></div>
+
+          <!-- Footer -->
+          <div></div>
+          <footer class="footer">
+            <p class="body-3">
+              Powered By
+              <a
+                href="https://openweathermap.org/api"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="./assets/imgs/openweather.png"
+                  width="150"
+                  height="30"
+                  alt="openweatherapi icon"
+                  loading="lazy"
+              /></a>
+            </p>
+          </footer>
+        </article>
+      </main>
+
+      <!-- 404 error section -->
+      <section class="error-content" data-error-content>
+        <h2 class="heading">404</h2>
+
+        <p class="body-1">Something went wrong!</p>
+
+        <a href="#/weather?lat=10.7758439&lon=106.7017555" class="btn-primary">
+          <span class="text">Go Home</span>
+        </a>
+      </section>
+    </div>
+  </body>
+</html>
