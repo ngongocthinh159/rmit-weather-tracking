@@ -1,4 +1,4 @@
-const API_KEY = 'eed9bc4e4c5325da737002377671d985';
+const API_KEY = ''; // Create a free account in https://openweathermap.org/ and get your free API key, then place it in here to use the application
 
 function fetchData(URL, callback) {
   fetch(`${URL}`)
