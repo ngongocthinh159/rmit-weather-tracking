@@ -11,7 +11,8 @@ This is a responsive Weather Forecast application. Currently supported features:
 9. Route query, replace lat and lon value to query weather data. For ex: localhost:5500/#/weather?lat=10.7758439&lon=106.7017555
 
 Usage:
-
+- Go to https://openweathermap.org/ create a free account and get a free API key.
+- Go to file 'assets/js/weatherapi.js' and insert your API key into API_KEY variable located in the top of the file.
 - Open 'index.html' with live server.
 
 Screenshot:
